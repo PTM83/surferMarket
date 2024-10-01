@@ -25,14 +25,12 @@
   
   /*NAVBAR LEFT SIZE*/
   .navbar-left {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
 
     .navbar-logo {
-      /* Styles for the .navbar-logo class */
       height: 3em;
       margin-inline: 1em;
       transform: rotate(-135deg);
@@ -68,7 +66,6 @@
         /* Styles for the .navbar-logo class */
         height: 3em;
         margin-inline: 1em;
-        transform: rotate(-135deg);
       }
     
       .navbar-title {
