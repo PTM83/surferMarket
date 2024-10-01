@@ -1,14 +1,22 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { SurferHeader } from './components/SurferHeader'
+import { TestView } from './pages/TestView'
+import { SurferHomePage } from './pages/SurferHomePage'
 
 function App() {
-  return (
-    <>
-      <SurferHeader />
+return (
+  <>
+    <Routes>
 
+    <Route path='/' element = {<SurferHomePage/>}>
+    </Route>
 
-    </>
-  )
+    <Route path='/testView' element = {<TestView/>}>
+    </Route>
+
+    </Routes>
+  </>
+)
 }
 
 export default App

@@ -1,5 +1,9 @@
 import { useState } from 'react'
-import tableSurf from '../assets/icons/surfing-board.png'
+import { ShoppingCart } from './ShoppingCart';
+import { TableSurfLogo } from './TableSurfLogo';
+import { SurferAvatarUser } from './SurferAvatarUser';
+import { NewsSurfer } from './NewsSurfer';
+
 
 export const SurferHeader = () => {
 
@@ -7,14 +11,13 @@ export const SurferHeader = () => {
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value); // Update the state with the user's input
+    // console.log(searchTerm)
   };
 
   return (
     <nav className='navbar'>
-      <div className='navbar-left'>
-        <img src={ tableSurf } alt='Logo' className='navbar-logo'></img>
-        <h1 className='navbar-title'>surf market</h1>        
-      </div>
+      
+      <TableSurfLogo />   
 
       <input 
         type="text" 
@@ -26,8 +29,9 @@ export const SurferHeader = () => {
       </input>
 
       <div className='navbar-right'>
-        <img src={ tableSurf } alt='Logo' className='navbar-logo'></img>
-        <h1 className='navbar-title'>surf market</h1>        
+        <NewsSurfer />
+        <ShoppingCart />
+        <SurferAvatarUser />        
       </div>
 
     </nav>
