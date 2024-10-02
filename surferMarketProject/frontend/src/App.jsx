@@ -8,11 +8,11 @@ return (
   <>
     <Routes>
 
-    <Route path='/' element = {<SurferHomePage/>}>
-    </Route>
+      <Route path='/' element = {<SurferHomePage/>}>
+      </Route>
 
-    <Route path='/testView' element = {<TestView/>}>
-    </Route>
+      <Route path='/testView' element = {<TestView/>}>
+      </Route>
 
     </Routes>
   </>

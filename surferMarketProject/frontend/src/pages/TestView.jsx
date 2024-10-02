@@ -1,13 +1,17 @@
-import React from 'react'
+
 import { SurferHeader } from '../components/SurferHeader'
+import { SurferFooter } from '../components/SurferFooter'
 
 export const TestView = () => {
   return (
     <>
       <SurferHeader/>
-      <h1>
-        TestView
-      </h1> 
+      <section className='content-container'>
+        <h1>
+          TestView
+        </h1>
+      </section>
+      <SurferFooter />
     </>
   )
 }

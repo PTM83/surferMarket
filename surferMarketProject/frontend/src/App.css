@@ -20,6 +20,13 @@
   --textColor: #2c3e50;         /* Example: Dark text */
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*MARK: NAVBAR*/
 .navbar {
   height: 6em;
   width: 80rem;
@@ -89,9 +96,62 @@
       }
 
     }
+}
 
-  
+/*MARK: BODY*/
 
+.content-container {
+  flex-grow: 1;
+  height: 80vh;
+}
 
+/*MARK: FOOTER*/
+footer {
+  height: 6em;
+  width: 80rem;
+  background-color: var(--textColor);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  .footer-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 1rem;
+
+    ul {
+      margin-inline: 1rem;
+      color: white;
+    }
+  }
+
+  .footer-middle {
+    .mail-input {
+      width:12rem;
+      height: 1.1rem;
+      border-radius: 0.5rem;
+      margin-inline: 0.4rem;
+    }
+    span {
+      color: white;
+    }
+    button {
+      padding: 0.1rem;
+      background-color: var(--secondaryColor);
+      border-radius: 20%;
+      border-color: var(--secondaryColor);
+    }
+  }
+
+  .footer-leftSize {
+
+    .social-media-logo {
+      width: 1.7rem;
+      height: auto;
+      margin-inline: 1em;
+      border-radius: 20%;
+    }
+  }
 }
