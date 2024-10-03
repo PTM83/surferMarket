@@ -1,3 +1,4 @@
+import { SurferCardProduct } from '../components/SurferCardProduct'
 import { SurferFooter } from '../components/SurferFooter'
 import { SurferHeader } from '../components/SurferHeader'
 
@@ -7,7 +8,7 @@ export const SurferHomePage = () => {
       <SurferHeader />
       <section className='content-container'>
         <h1>
-          HomePage
+          <SurferCardProduct/>
         </h1>
       </section>
       <SurferFooter />

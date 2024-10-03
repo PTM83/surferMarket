@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "brand": "Chilli",
+    "category": "Surfboard",
+    "description": "Tabla Chilli 7.0 x 22 x 2 1/2",
+    "price": 300000,
+    "image": "https://th.bing.com/th/id/OIP._ZvXAybBv2nviSTe40ysFQAAAA?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": 2,
+    "brand": "Rusty",
+    "category": "Surfboard",
+    "description": "Tabla 6.0 x 21 x 2 marca Rusty",
+    "price": 200000,
+    "image": "https://th.bing.com/th/id/OIP.EKcsmlEvitzHVdO5OH2okAHaHa?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": 3,
+    "brand": "Lost",
+    "category": "Surfboard",
+    "description": "Tabla 6.0 x 21 x 2 marca Lost",
+    "price": 400000,
+    "image": "https://www.trysurf.com/img/boards/6_10_Swallowtail_grande.png"
+  },
+  {
+    "id": 4,
+    "brand": "Chilli",
+    "category": "Surfboard",
+    "description": "Tabla Chilli 7.0 x 22 x 2 1/2",
+    "price": 300000,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/31dceO88OnL._SY300_QL70_.jpg"
+  },
+  {
+    "id": 5,
+    "brand": "Rusty",
+    "category": "Surfboard",
+    "description": "Tabla 6.0 x 21 x 2 marca Rusty",
+    "price": 200000,
+    "image": "https://th.bing.com/th/id/OIP.q8xi_k4U2uJdFDIqG2QM_QHaaW?rs=1&pid=ImgDetMain"
+  },
+  {
+    "id": 6,
+    "brand": "Lost",
+    "category": "Surfboard",
+    "description": "Tabla 6.0 x 21 x 2 marca Lost",
+    "price": 400000,
+    "image": "https://static.vecteezy.com/system/resources/previews/009/397/861/non_2x/surfboard-clipart-design-illustration-free-png.png"
+  }
+]
