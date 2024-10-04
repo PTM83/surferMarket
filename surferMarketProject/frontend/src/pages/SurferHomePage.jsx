@@ -6,7 +6,7 @@ export const SurferHomePage = () => {
   return (
     <>
       <SurferHeader />
-      
+      <h1>Prueba Pablo</h1>
       <SurferCardProduct/>
       
       <SurferFooter />
