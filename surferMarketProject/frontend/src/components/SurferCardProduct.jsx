@@ -1,13 +1,14 @@
-
 import { useProducts } from '../Hooks/useProducts'
+import { useCart } from '../Hooks/cartContext';
 
 export const SurferCardProduct = () => {
 
   const { products, loading, error } = useProducts();
+  const { handleAddToCart } = useCart();
 
-  if(loading) return <div>Loading...</div>
+  if(loading) return <div className='content-container'>Loading...</div>
 
-  if(error) return <div>Error: {error}</div>
+  if(error) return <div className='content-container'>Error: {error}</div>
   
   return (
     <>
@@ -29,7 +30,7 @@ export const SurferCardProduct = () => {
             <hr/>
             <footer className='footer-product-card'>
               <span> Precio: <b>$ {product.price.toLocaleString('es-ES')}</b> </span>
-              <button type='button' className='footer-button'> Comprar Ahora </button>
+              <button onClick={() => handleAddToCart(product)} className='footer-button'> Comprar Ahora </button>
             </footer>
           </div>
         ))}
