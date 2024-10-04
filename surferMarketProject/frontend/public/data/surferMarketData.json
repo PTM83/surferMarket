@@ -46,5 +46,53 @@
     "description": "Tabla 6.0 x 21 x 2 marca Lost",
     "price": 400000,
     "image": "https://static.vecteezy.com/system/resources/previews/009/397/861/non_2x/surfboard-clipart-design-illustration-free-png.png"
+  },
+  {
+    "id": 7,
+    "brand": "Firewire",
+    "category": "Surfboard",
+    "description": "Firewire Sci-Fi 5.9 x 19 1/4 x 2 1/2",
+    "price": 500000,
+    "image": "https://example.com/firewire.jpg"
+  },
+  {
+    "id": 8,
+    "brand": "JS Industries",
+    "category": "Surfboard",
+    "description": "JS Monsta 3 6.0 x 19 x 2 1/2",
+    "price": 450000,
+    "image": "https://example.com/jsindustries.jpg"
+  },
+  {
+    "id": 9,
+    "brand": "Channel",
+    "category": "Surfboard",
+    "description": "Channel Islands Happy 5.10 x 18 3/4 x 2 5/16",
+    "price": 600000,
+    "image": "https://example.com/channelislands.jpg"
+  },
+  {
+    "id": 10,
+    "brand": "Pyzel",
+    "category": "Surfboard",
+    "description": "Pyzel Ghost 6.1 x 19 1/4 x 2 9/16",
+    "price": 550000,
+    "image": "https://example.com/pyzelghost.jpg"
+  },
+  {
+    "id": 11,
+    "brand": "DHD",
+    "category": "Surfboard",
+    "description": "DHD DX1 5.11 x 18 5/8 x 2 3/8",
+    "price": 520000,
+    "image": "https://example.com/dhdsurfboard.jpg"
+  },
+  {
+    "id": 12,
+    "brand": "Lost",
+    "category": "Surfboard",
+    "description": "Lost V3 Rocket 6.0 x 20 x 2 5/8",
+    "price": 480000,
+    "image": "https://example.com/lostv3rocket.jpg"
   }
 ]

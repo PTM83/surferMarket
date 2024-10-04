@@ -20,7 +20,7 @@ export const SurferCardProduct = () => {
             </header>
 
             <img src= {product.image}
-                alt='' 
+                alt= '' 
                 className='image-product-card' />
 
             <p className='description-product-card'>
@@ -28,7 +28,8 @@ export const SurferCardProduct = () => {
             </p>
             <hr/>
             <footer className='footer-product-card'>
-              <span> Precio del Producto: ${product.price} </span>
+              <span> Precio: <b>$ {product.price.toLocaleString('es-ES')}</b> </span>
+              <button type='button' className='footer-button'> Comprar Ahora </button>
             </footer>
           </div>
         ))}

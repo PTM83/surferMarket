@@ -6,11 +6,9 @@ export const SurferHomePage = () => {
   return (
     <>
       <SurferHeader />
-      <section className='content-container'>
-        <h1>
-          <SurferCardProduct/>
-        </h1>
-      </section>
+      
+      <SurferCardProduct/>
+      
       <SurferFooter />
     </>
   )
