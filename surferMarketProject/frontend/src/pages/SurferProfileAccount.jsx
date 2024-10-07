@@ -1,12 +1,16 @@
 import { SurferFooter } from "../components/SurferFooter"
 import { SurferFormAccount } from "../components/SurferFormAccount"
 import { SurferHeader } from "../components/SurferHeader"
+import NavigationButtons from "../components/NavigationButtons"; // Sin llaves porque es una exportación por defecto
+
 
 export const SurferProfileAccount = () => {
 
   return (
     <>
     <SurferHeader />
+
+  <NavigationButtons/>
 
     <section className="surfer-profile-introduction">
       <h1>Bienvenido a nuestro marketplace de surf 🏄‍♀️</h1>
