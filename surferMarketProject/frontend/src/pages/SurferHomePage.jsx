@@ -11,7 +11,7 @@ export const SurferHomePage = () => {
 
       <NavigationButtons />
       <div>
-        <img src={evoluciona} alt="probando git push" style={{ width: '900px', height: 'auto' }} />
+        <img src={evoluciona} alt="Descripción de la imagen" style={{ width: '900px', height: 'auto' }} />
       </div>
       
       
