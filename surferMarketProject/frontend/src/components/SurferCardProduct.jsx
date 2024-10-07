@@ -1,15 +1,18 @@
 
 import { useProducts } from '../Hooks/useProducts';
+import { useCart } from '../Hooks/cartContext';
 
-export const SurferCardProduct = ({ addToCart }) => { 
+export const SurferCardProduct = ( ) => { 
   const { products, loading, error } = useProducts();
+  const { handleAddToCart } = useCart()
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <div className='content-container'>Loading...</div>;
+  if (error) return <div className='content-container'>Error: {error}</div>;
 
   return (
     <>
       <section className='surfer-product-card-container'>
+
         {products.map((product) => (
           <div key={product.id} className='product-card'>
             <header className='header-product-card'>
@@ -24,13 +27,14 @@ export const SurferCardProduct = ({ addToCart }) => {
               <button
                 type='button'
                 className='footer-button'
-                onClick={() => addToCart(product.id, product.price, product.brand, product.image)} 
+                onClick={() => handleAddToCart(product)} 
               >
                 Comprar Ahora
               </button>
             </footer>
           </div>
         ))}
+
       </section>
     </>
   );
