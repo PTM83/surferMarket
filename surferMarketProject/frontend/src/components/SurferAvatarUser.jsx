@@ -4,7 +4,7 @@ import surfinAvatar  from '../assets/icons/surfer.png'
 export const SurferAvatarUser = () => {
   return (
     <>
-      <Link to = '/userProfile' className='avatar-container'>
+      <Link to = '/login' className='avatar-container'>
         <img src= { surfinAvatar } alt = 'avatar' className='avatar-logo'></img>
       </Link>
     </>

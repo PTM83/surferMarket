@@ -1,6 +1,8 @@
 const { Pool } = require('pg');
 require('dotenv').config() // Cargar las variables del entorno
 
+// Conectar con la base de datos de PostgeSQL
+
 const pool = new Pool({
   user: process.env.USER,
   host: process.env.HOST,
