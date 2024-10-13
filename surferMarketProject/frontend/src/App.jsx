@@ -10,6 +10,7 @@ import Noticias from './components/Noticias';
 // import ProductForm from './components/ProductForm';
 import CartView from './pages/CartView'; // Importa tu nuevo componente
 import { CartProvider } from './Hooks/cartContext';
+import { SurferLoginView } from './pages/SurferLoginView';
 // import ProductProvider from './Context/ProductProvider';
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/add-product' element={<TestView />} />
         <Route path='/noticias' element={<Noticias />} />
         <Route path='/cart' element={<CartView />} /> {/* Ruta del carrito */}
+        <Route path='/login' element= { <SurferLoginView />} />
       </Routes>
     </CartProvider>
   );
