@@ -1,11 +1,12 @@
 const { Pool } = require('pg');
+require('dotenv').config() // Cargar las variables del entorno
 
 const pool = new Pool({
-  user: 'yourUser',
-  host: 'localhost',
-  database: 'surferMarketDB',
-  password: 'yourPassword',
-  port: 5432,
+  user: process.env.USER,
+  host: process.env.HOST,
+  database: process.env.DATABASE,
+  password: process.env.PASSWORD,
+  allowExitOnIdle: true
 });
 
 module.exports = pool;
