@@ -14,27 +14,27 @@ export const SurferFormAccount = () => {
     <>
       <form action='/submit' method='POST' className="surfer-form">
 
-      <img src={ tableSurf } alt='Logo' className='form-logo'></img>
+        <img src={ tableSurf } alt='Logo' className='form-logo'></img>
 
-      <h2>Enter your Surfer Data</h2>
+        <h2>Enter your Surfer Data</h2>
 
-      <p>Únete a nuestra comunidad de surfistas y empieza a explorar! 🏄‍♀️</p>
+        <p>Únete a nuestra comunidad de surfistas y empieza a explorar! 🏄‍♀️</p>
 
-      {
-        formFields.map((field) => (
-        <div key={field.id} className="div-form">
-          <label htmlFor={field.id}>{field.label}:</label>
-          <input
-            type={field.type}
-            id={field.id}
-            name={field.id}
-            placeholder={field.placeholder || ''}
-            minLength={field.minLength || undefined}
-            required={field.required}
-          />
-        </div>
-      ))
-      }
+        {
+          formFields.map((field) => (
+          <div key={field.id} className="div-form">
+            <label htmlFor={field.id}>{field.label}:</label>
+            <input
+              type={field.type}
+              id={field.id}
+              name={field.id}
+              placeholder={field.placeholder || ''}
+              minLength={field.minLength || undefined}
+              required={field.required}
+            />
+          </div>
+        ))
+        }
 
         <input type="submit" value="Submit" className="profile-button"/>
       </form>
