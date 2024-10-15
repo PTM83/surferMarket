@@ -253,14 +253,15 @@ body {
   }
 
   .form_direction {
-    color: var(--secondaryColor);
+    color: var(--textColor);
     padding-top: 0.5rem;
+    text-decoration: none;
   }
 
   .profile-button {
     width:70%;
     font-size: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     padding: 0.3rem;
     background-color: rgb(48, 120, 228);
     border-radius: var(--borderRadius);

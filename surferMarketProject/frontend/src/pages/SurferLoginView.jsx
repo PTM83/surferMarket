@@ -2,6 +2,7 @@ import { SurferHeader } from '../components/SurferHeader'
 import NavigationButtons from '../components/NavigationButtons'
 import { SurferFooter } from '../components/SurferFooter'
 import tableSurf from '../assets/icons/surfing-board.png'
+import { Link } from 'react-router-dom'
 
 
 export const SurferLoginView = () => {
@@ -45,7 +46,7 @@ export const SurferLoginView = () => {
           ))
           }
 
-          <a className='form_direction'>Si no posees una cuenta haz clic acá</a>
+          <Link to='/userProfile' className='form_direction'>Si no posees una cuenta haz clic acá</Link>
 
           <input type="submit" value="Submit" className="profile-button"/>
         </form>
