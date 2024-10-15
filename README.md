@@ -14,21 +14,21 @@ Para crear la base de dato del proyecto se sigue la siguiente directriz
 
 *Para eliminar las tablas si es que existen*
 
-drop table if exists Categories;
+`drop table if exists Categories;
 drop table if exists OrderItems;
 drop table if exists Orders;
 drop table if exists Product;
-drop table if exists Users;
+drop table if exists Users;`
 
 
-CREATE TABLE Users (
+`CREATE TABLE Users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password_hash TEXT NOT NULL,
     role VARCHAR(20) CHECK (role IN ('buyer', 'seller', 'admin')) NOT NULL,
     profile_image TEXT
-);
+);`
 
 /*Esta tabla almacenará los productos, incluyendo una referencia al usuario (vendedor).*/
 CREATE TABLE Product (
