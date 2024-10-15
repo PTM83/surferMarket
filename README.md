@@ -14,11 +14,12 @@ Para crear la base de dato del proyecto se sigue la siguiente directriz
 
 *Para eliminar las tablas si es que existen*
 
-`drop table if exists Categories;
+```sql
+drop table if exists Categories;
 drop table if exists OrderItems;
 drop table if exists Orders;
 drop table if exists Product;
-drop table if exists Users;`
+drop table if exists Users;
 
 
 `CREATE TABLE Users (
@@ -63,7 +64,7 @@ CREATE TABLE Categories (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL
 );
-
+```
 
  * Explicación de las Relaciones:
 **Users:**
