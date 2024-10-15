@@ -11,7 +11,9 @@ Para crear la base de dato del proyecto se sigue la siguiente directriz
 
 **Nombre de la Base de Dato**: surferMarket
 ## Tablas a Crear
-/*Para eliminar las tablas si es que existen*/
+
+*Para eliminar las tablas si es que existen*
+
 drop table if exists Categories;
 drop table if exists OrderItems;
 drop table if exists Orders;
