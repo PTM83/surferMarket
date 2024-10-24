@@ -4,10 +4,10 @@ require('dotenv').config() // Cargar las variables del entorno
 // Conectar con la base de datos de PostgeSQL
 
 const pool = new Pool({
-  user: process.env.USER_DB,
   host: process.env.HOST,
-  database: process.env.DATABASE,
+  user: process.env.USER_DB,
   password: process.env.PASSWORD,
+  database: process.env.DATABASE,
   allowExitOnIdle: true
 });
 

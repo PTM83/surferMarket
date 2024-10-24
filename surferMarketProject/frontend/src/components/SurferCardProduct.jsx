@@ -19,11 +19,11 @@ export const SurferCardProduct = ( ) => {
               <h1>{product.brand}</h1>
             </header>
 
-            <img src={product.image} alt='' className='image-product-card' />
+            <img src={product.image_url} alt='' className='image-product-card' />
             <p className='description-product-card'>{product.description}</p>
             <hr />
             <footer className='footer-product-card'>
-              <span> Precio: <b>$ {product.price.toLocaleString('es-ES')}</b> </span>
+              <span> Precio: <b>$ {parseFloat(product.price).toLocaleString('es-ES')}</b> </span>
               <button
                 type='button'
                 className='footer-button'

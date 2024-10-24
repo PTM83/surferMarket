@@ -8,7 +8,7 @@ export const ShoppingCart = () => {
 
   return (
     <>
-      <Link to = '/testView'>
+      <Link to = '/sell_products'>
         { cartItems.length === 0 
         ?
           <img src={ shoppingCart } alt='shopping-Cart' className='shoppingCart'></img>
