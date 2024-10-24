@@ -29,7 +29,8 @@ app.get('/', (req, res) => {
 
 // Ruta para traer la información de las Base de Datos denominada "tablas"
 
-// [PRODUCTOS] Se extrae la data de Productos
+// [PRODUCTOS] CRUD Se extrae la data de Productos
+// READ
 app.get("/api/products", async (req, res) => {
   try {
     const query = 'SELECT * FROM product;';
@@ -43,7 +44,22 @@ app.get("/api/products", async (req, res) => {
   }
 })
 
+// CREATE
+app.post('/api/products', async (req, res)=>{
 
+  try {
+    const { name, description, price, brand, image_url, user_id } = req.body
+    const query = "INSERT (name, description, price, brand, image_url, user_id) INTO product Values($0, $1, $2, $3, $4, $5);"
+    const values = [name, description, price, brand, image_url, user_id]
+    const { rows } = await pool.query(query, values)
+    res.json(rows)
+
+  } catch (error) {
+    console.log(`Error de crear un usuario es ${error.message}`)
+    res.status(503).json({message: 'Error al crear el producto'})
+  }
+
+})
 
 
 
