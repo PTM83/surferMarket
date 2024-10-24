@@ -3,6 +3,11 @@
 // import NavigationButtons from '../components/NavigationButtons';
 // import '../App.css' // Asegúrate de importar tu archivo de estilos
 
+import NavigationButtons from "./NavigationButtons"
+import { SurferFooter } from "./SurferFooter"
+import { SurferHeader } from "./SurferHeader"
+import { useCart } from '../Hooks/cartContext'
+
 // const ProductForm = ({ onAddProduct }) => {
 //   const [productName, setProductName] = useState('');
 //   const [productPrice, setProductPrice] = useState('');
@@ -110,9 +115,43 @@
 // export default ProductForm;
 
 
-// // export const ProductForm = () => {
-// //   return (
-// //     <div>ProductForm</div>
-// //   )
-// // }
+export const ProductForm = () => {
+
+  const { cartItems } = useCart()
+
+  return (
+    <>
+    <SurferHeader />
+
+    <NavigationButtons />
+      <h1>ProductForm { cartItems.length }</h1>
+    <section className='shopping-cart-container'>
+
+      {
+        cartItems.length > 0 
+        ? 
+        
+        <ul className="shopping-cart-list">
+          {cartItems.map((item) => (
+            <li key={item.id} className="shopping-cart-item">
+              <div className="item-info">
+                <img src={item.image_url} alt={item.name} className="item-image" />
+                <span className="item-name"> Nombre del producto: {item.name}</span>
+                <span className="item-name"> Precio del producto: ${parseFloat(item.price).toLocaleString('es-Es')}</span>
+                <button className="remove-button">Eliminar</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        :
+        <h2>No hay elementos por mostrar</h2>
+      }
+
+    </section>
+
+    <SurferFooter />
+    </>
+  )
+}
 

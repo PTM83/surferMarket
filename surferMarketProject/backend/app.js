@@ -1,7 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-const authRoutes = require('./routes/authRoutes'); // Importa las rutas de autenticación
-const { authenticateToken } = require('./authRoutes'); // Asegúrate de que la ruta sea correcta
+// Traer la base de datos
+const pool = require('./db')
+// Estas dos rutas traen problemas para levantar la terminal
+// const authRoutes = require('./routes/authRoutes'); // Importa las rutas de autenticación
+// const { authenticateToken } = require('./routes/authRoutes'); // Asegúrate de que la ruta sea correcta
 
 
 const app = express();
@@ -11,15 +14,45 @@ app.use(cors());
 app.use(express.json()); // Para manejar datos JSON en las solicitudes
 
 // Rutas
-app.use('/api/auth', authRoutes);
+// app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
   res.send('Servidor funcionando con CORS habilitado');
 });
 
-app.use(cors({
-  origin: 'http://tudominio.com' // Reemplaza con el dominio de tu frontend
-}));
+// app.use(cors({
+//   origin: 'http://tudominio.com' // Reemplaza con el dominio de tu frontend
+// }));
+
+
+// Conectar rutas DB
+
+// Ruta para traer la información de las Base de Datos denominada "tablas"
+
+// [PRODUCTOS] Se extrae la data de Productos
+app.get("/api/products", async (req, res) => {
+  try {
+    const query = 'SELECT * FROM product;';
+    const { rows } = await pool.query(query)
+
+    res.json(rows);
+
+  } catch (error) {
+    console.log(`El error que se muestra es ${error.message}`);
+    res.status(500).json({ message: 'Error al obtener los datos' });
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Iniciar el servidor
@@ -27,24 +60,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
-
-// Conectar rutas DB
-
-// Ruta para traer la información de las Base de Datos denominada "tablas"
-// app.get('/surferMarketDB', async (req, res) => {
-//   try {
-//     //
-
-//     const { limits, pages ,order_by} = req.query
-
-//     // Crear variable de realizar consultas
-//     let consultas = ''
-
-//     if (order_by) {
-      
-//     }
-
-//   } catch (error) {
-//     res.status(500).send(error)
-//   }
-// })

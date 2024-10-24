@@ -10,7 +10,8 @@ export function useProducts() {
   useEffect(() => {
     async function loadProducs() {
       try {
-        const data = await fetchProducts();
+        const endPoint = '/api/products'
+        const data = await fetchProducts(endPoint);
         setProducts(data);
       } catch (err) {
         setError(err.message)
