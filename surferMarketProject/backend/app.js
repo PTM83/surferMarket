@@ -49,7 +49,7 @@ app.post('/api/products', async (req, res)=>{
 
   try {
     const { name, description, price, brand, image_url, user_id } = req.body
-    const query = "INSERT (name, description, price, brand, image_url, user_id) INTO product Values($0, $1, $2, $3, $4, $5);"
+    const query = "INSERT INTO product (name, description, price, brand, image_url, user_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;"
     const values = [name, description, price, brand, image_url, user_id]
     const { rows } = await pool.query(query, values)
     res.json(rows)
