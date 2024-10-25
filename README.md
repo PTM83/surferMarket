@@ -22,14 +22,14 @@ drop table if exists Product;
 drop table if exists Users;
 
 
-`CREATE TABLE Users (
+CREATE TABLE Users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password_hash TEXT NOT NULL,
     role VARCHAR(20) CHECK (role IN ('buyer', 'seller', 'admin')) NOT NULL,
     profile_image TEXT
-);`
+);
 
 /*Esta tabla almacenará los productos, incluyendo una referencia al usuario (vendedor).*/
 CREATE TABLE Product (

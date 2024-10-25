@@ -1,12 +1,12 @@
 
-export async function fetchProducts(endPoint) {
+export async function fetchData(endPoint, options = {}) {
   
   // const url = '../public/data/surferMarketData.json'
   // Descarga productos
 
    const url = 'http://localhost:3000' + endPoint
 
-  const response = await fetch(url);
+  const response = await fetch(url, options);
 
   if(!response.ok) {
     throw new Error('Failed to fetch products')

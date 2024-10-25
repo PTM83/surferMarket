@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react'
-import { fetchProducts } from '../service/apiService';
+import { fetchData } from '../service/apiService';
 
 export function useProducts() {
   const [products, setProducts] = useState([]);
@@ -11,7 +11,7 @@ export function useProducts() {
     async function loadProducs() {
       try {
         const endPoint = '/api/products'
-        const data = await fetchProducts(endPoint);
+        const data = await fetchData(endPoint);
         setProducts(data);
       } catch (err) {
         setError(err.message)
