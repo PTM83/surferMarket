@@ -1,9 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-// Traer la base de datos
-const pool = require('./db')
+const pool = require('./db') // Traer la base de datos
 // Estas dos rutas traen problemas para levantar la terminal
-// const authRoutes = require('./routes/authRoutes'); // Importa las rutas de autenticación
+const authRoutes = require('./routes/authRoutes'); // Importa las rutas de autenticación
 // const { authenticateToken } = require('./routes/authRoutes'); // Asegúrate de que la ruta sea correcta
 
 
@@ -20,24 +19,25 @@ app.get('/', (req, res) => {
   res.send('Servidor funcionando con CORS habilitado');
 });
 
+
 // app.use(cors({
-//   origin: 'http://tudominio.com' // Reemplaza con el dominio de tu frontend
-// }));
-
-
-// Conectar rutas DB
-
-// Ruta para traer la información de las Base de Datos denominada "tablas"
-
-// [PRODUCTOS] CRUD Se extrae la data de Productos
-// READ
-app.get("/api/products", async (req, res) => {
-  try {
-    const query = 'SELECT * FROM product;';
+  //   origin: 'http://tudominio.com' // Reemplaza con el dominio de tu frontend
+  // }));
+  
+  
+  // Conectar rutas DB
+  
+  // Ruta para traer la información de las Base de Datos denominada "tablas"
+  
+  // [PRODUCTOS] CRUD Se extrae la data de Productos
+  // READ
+  app.get("/api/products", async (req, res) => {
+    try {
+      const query = 'SELECT * FROM product;';
     const { rows } = await pool.query(query)
 
     res.json(rows);
-
+    
   } catch (error) {
     console.log(`El error que se muestra es ${error.message}`);
     res.status(500).json({ message: 'Error al obtener los datos' });
@@ -53,21 +53,21 @@ app.post('/api/products', async (req, res)=>{
     const values = [name, description, price, brand, image_url, user_id]
     const { rows } = await pool.query(query, values)
     res.json(rows)
-
+    
   } catch (error) {
     console.log(`Error de crear un usuario es ${error.message}`)
     res.status(503).json({message: 'Error al crear el producto'})
   }
-
+  
 })
 
+// PUT
+
+// DELETE
 
 
 
-
-
-
-
+app.use('/api/auth', authRoutes)
 
 
 
