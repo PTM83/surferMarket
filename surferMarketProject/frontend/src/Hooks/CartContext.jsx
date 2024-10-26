@@ -13,15 +13,16 @@ export const CartProvider = ({ children }) => {
 
 const [cartItems, setCartItems] = useState(getCartItems() || [])
 
-  const handleAddToCart = (product) => {
-    const updateCart = addToCart(product)
-    setCartItems([...updateCart])
-  }
+const handleAddToCart = async (product) => {
+  const updatedCart = await addToCart(product);
+  setCartItems([...updatedCart]);
+}
 
-  const handleRemoveFromCart = (productId) => {
-    const updateCart = removeFromCart(productId)
-    setCartItems([...updateCart])
-  }
+const handleRemoveFromCart = async (productId) => {
+  const updatedCart = await removeFromCart(productId);
+  setCartItems([...updatedCart]);
+}
+
 
   return (
     <CartContext.Provider value={{ cartItems, handleAddToCart, handleRemoveFromCart }}>
