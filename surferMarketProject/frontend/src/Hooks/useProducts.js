@@ -1,6 +1,5 @@
-
-import { useEffect, useState } from 'react'
-import { fetchData } from '../service/apiService';
+import { useEffect, useState } from 'react';
+import { fetchData } from '../service/apiService'; // Verifica que la ruta sea correcta
 
 export function useProducts() {
   const [products, setProducts] = useState([]);
@@ -8,20 +7,20 @@ export function useProducts() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function loadProducs() {
+    async function loadProducts() { // Corrige "loadProducs" a "loadProducts"
       try {
-        const endPoint = '/api/products'
+        const endPoint = '/api/products';
         const data = await fetchData(endPoint);
         setProducts(data);
       } catch (err) {
-        setError(err.message)
+        setError(err.message);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
 
-    loadProducs()
-  }, [])
+    loadProducts();
+  }, []);
 
-  return { products, loading, error }
+  return { products, loading, error };
 }
