@@ -9,7 +9,7 @@ import { MarketPlace } from './pages/MarketPlace';
 import Noticias from './components/Noticias';
 // import ProductForm from './components/ProductForm';
 import CartView from './pages/CartView'; // Importa tu nuevo componente
-import { CartProvider } from './hooks/cartContext';
+import { CartProvider } from './components/cartContext';
 import { SurferLoginView } from './pages/SurferLoginView';
 import { ProductForm } from './components/ProductForm';
 // import ProductProvider from './Context/ProductProvider';

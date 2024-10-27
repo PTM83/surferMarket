@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import shoppingCart from '../assets/icons/shopping-cart.png'
-import { useCart } from '../hooks/cartContext'
+import { useCart } from '../components/cartContext'
 
 export const ShoppingCart = () => {
 
