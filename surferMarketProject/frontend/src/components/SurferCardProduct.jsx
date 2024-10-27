@@ -1,6 +1,6 @@
 
 import { useProducts } from '../hooks/useProducts';
-import { useCart } from './cartContext';
+import { useCart } from '../hooks/cartContext';
 
 export const SurferCardProduct = ( ) => { 
   const { products, loading, error } = useProducts();
