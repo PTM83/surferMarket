@@ -1,4 +1,4 @@
-import { useProducts } from '../hooks/useProducts'; // Asegúrate de que la ruta sea correcta
+import { useProducts } from '../Hooks/useProducts'; // Asegúrate de que la ruta sea correcta
 import { useCart } from './cartContext'; // Verifica que cartContext tenga la extensión correcta
 
 export const SurferCardProduct = () => { 
