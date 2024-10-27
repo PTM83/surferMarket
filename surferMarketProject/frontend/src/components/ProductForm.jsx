@@ -6,7 +6,7 @@
 import NavigationButtons from "./NavigationButtons"
 import { SurferFooter } from "./SurferFooter"
 import { SurferHeader } from "./SurferHeader"
-import { useCart } from '../Hooks/cartContext'
+import { useCart } from './cartContext'
 
 // const ProductForm = ({ onAddProduct }) => {
 //   const [productName, setProductName] = useState('');

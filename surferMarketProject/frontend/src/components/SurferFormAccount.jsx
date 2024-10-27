@@ -1,4 +1,4 @@
-import { useCreateUser } from '../Hooks/useCreateUser';
+import { useCreateUser } from '../hooks/useCreateUser';
 import tableSurf from '../assets/icons/surfing-board.png';
 import { useState } from 'react';
 
