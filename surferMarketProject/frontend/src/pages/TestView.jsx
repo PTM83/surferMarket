@@ -23,6 +23,10 @@ export const TestView = () => {
             <label htmlFor="productDescription">Description:</label>
             <textarea id="productDescription" name="productDescription" required />
           </div>
+          <div className="form-group">
+            <label htmlFor="productImage">Upload Image:</label>
+            <input type="file" id="productImage" name="productImage" accept="image/*" required />
+          </div>
           <button type="submit" className="submit-btn">Add Product</button>
         </form>
       </section>
