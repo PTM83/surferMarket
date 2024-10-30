@@ -8,7 +8,7 @@ export const TestView = () => {
       <SurferHeader />
       <NavigationButtons />
       <section className='content-container'>
-        <h1>TestView</h1>
+        <h1>Sube tu Producto</h1>
         {/* Formulario para agregar productos */}
         <form className="product-form">
           <div className="form-group">
