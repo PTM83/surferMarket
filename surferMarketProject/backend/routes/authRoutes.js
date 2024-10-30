@@ -1,7 +1,7 @@
 const express = require('express');
 const pool = require('../db'); 
-// const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 // const { authenticateToken } = require('./authRoutes'); // Asegúrate de que la ruta sea correcta
 
 
@@ -62,22 +62,40 @@ router.post('/register', async (req, res) => {
 
 
 // // Ruta para hacer login
-// router.post('/login', async (req, res) => {
-//   const { username, password } = req.body;
+router.post('/login', async (req, res) => {
+  
+  try {
+    
+    const { email, password } = req.body;
+    
+    const query = 'SELECT * FROM users WHERE email = $1;';
+    const userEmail = [email];
 
-//   // Buscar el usuario en la base de datos
-//   const user = users.find(u => u.username === username);
-//   if (!user) return res.status(400).json({ message: 'Usuario no encontrado' });
+    const { rows } = await pool.query(query, userEmail)
+    
+    // Verifica si el usuario existe
+    if (rows.length === 0) {
+      return res.status(400).json({ message: 'Usuario no encontrado' });
+    }
 
-//   // Verificar la contraseña
-//   const isMatch = await bcrypt.compare(password, user.password);
-//   if (!isMatch) return res.status(400).json({ message: 'Contraseña incorrecta' });
-
-//   // Generar un token JWT
-//   const token = jwt.sign({ username }, 'secretKey', { expiresIn: '1h' });
-
-//   res.json({ token });
-// });
+    const user = rows[0]; // Toma el primer (y único) usuario encontrado
+    
+    // // Verificar la contraseña
+    const isMatch = await bcrypt.compare(password, user.password_hash);
+    if (!isMatch) return res.status(400).json({ message: 'Contraseña incorrecta' });
+    
+    // res.json(user); // Devuelve la información del usuario
+    // Generar un token JWT
+    const token = jwt.sign({ userEmail }, 'secretKey', { expiresIn: '1h' });
+  
+    res.json({ token });
+    
+  } catch (error) {
+    console.error(`Error al encontrar el usuario: ${error.message}`);
+    res.status(503).json({ message: 'Error al encontrar el usuario' });
+  }
+  
+});
 
 // // Middleware para verificar el token JWT
 // function authenticateToken(req, res, next) {
