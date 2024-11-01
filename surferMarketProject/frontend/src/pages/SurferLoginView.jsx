@@ -1,60 +1,42 @@
-import { SurferHeader } from '../components/SurferHeader'
-import NavigationButtons from '../components/NavigationButtons'
-import { SurferFooter } from '../components/SurferFooter'
-import tableSurf from '../assets/icons/surfing-board.png'
-import { Link } from 'react-router-dom'
-
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../components/authContext';
+import { SurferHeader } from './SurferHeader';
+import NavigationButtons from './NavigationButtons';
+import { SurferFooter } from './SurferFooter';
+import tableSurf from '../assets/icons/surfing-board.png';
 
 export const SurferLoginView = () => {
-  
-  const profileFields = [
-    { id: 'name', label: 'Name', type: 'text', placeholder: 'Enter your name', required: true },
-    { id: 'password', label: 'Password', type: 'password', placeholder: 'Enter your password',minLength: 8, required: true }
-  ];
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login();
+    navigate('/userProfile');
+  };
 
   return (
     <>
       <SurferHeader />
-
-      <NavigationButtons/>
-
+      <NavigationButtons />
       <section className='profile-container'>
-
-        <form action='/submit' method='POST' className="surfer-form">
-
-          <img src={ tableSurf } alt='Logo' className='form-logo'></img>
-
+        <form onSubmit={handleSubmit} className="surfer-form">
+          <img src={tableSurf} alt='Logo' className='form-logo' />
           <h2>Enter your Surfer Data</h2>
-
           <p>Únete a nuestra comunidad de surfistas y empieza a explorar! 🏄‍♀️</p>
-
-          {
-            profileFields.map((field) => (
-            <div key={field.id} className="div-form">
-              <label htmlFor={field.id} className='label_form'>{field.label}:</label>
-              <input
-                type={field.type}
-                id={field.id}
-                name={field.id}
-                placeholder={field.placeholder || ''}
-                minLength={field.minLength || undefined}
-                required={field.required}
-                className='input_form'
-              />
-            </div>
-          ))
-          }
-
-          <Link to='/userProfile' className='form_direction'>Si no posees una cuenta haz clic acá</Link>
-
-          <input type="submit" value="Submit" className="profile-button"/>
+          <div className="div-form">
+            <label htmlFor="name" className='label_form'>Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required className='input_form' />
+          </div>
+          <div className="div-form">
+            <label htmlFor="password" className='label_form'>Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" minLength="8" required className='input_form' />
+          </div>
+          <button type="submit" className="profile-button">Submit</button>
         </form>
-
       </section>
-
-
       <SurferFooter />
     </>
-  )
-}
+  );
+};
