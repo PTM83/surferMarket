@@ -9,7 +9,7 @@ const NavigationButtons = () => {
       <Link to="/">
         <button style={{ margin: '5px', padding: '10px 20px', fontSize: '16px' }}>NOTICIAS</button>
       </Link>
-      <Link to="/userProfile">
+      <Link to="/SurferProfileAccount">
         <button style={{ margin: '5px', padding: '10px 20px', fontSize: '16px' }}>REGISTRARSE</button>
       </Link>
     </div>
