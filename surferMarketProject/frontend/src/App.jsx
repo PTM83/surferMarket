@@ -17,7 +17,7 @@ function App() {
     <CartProvider>
       <Routes>
         <Route path='/' element={<SurferHomePage />} />
-        <Route path='/userProfile' element={<UserProfile />} />
+        <Route path='/UserProfile' element={<UserProfile />} />
         <Route path='/testView' element={<TestView />} />
         <Route path='/MarketPlace' element={<MarketPlace />} />
         <Route path='/add-product' element={<TestView />} />
