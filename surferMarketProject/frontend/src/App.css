@@ -392,7 +392,7 @@ body {
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
   background-color: #216efc; /* Color de fondo de la tarjeta */
-    margin-top: 20px; /* Espacio entre el formulario y el enlace */
+    margin-bottom: 80px; /* Espacio entre el formulario y el enlace */
     text-align: center; /* Centra el texto */
   }
 

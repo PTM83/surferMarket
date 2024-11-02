@@ -74,9 +74,11 @@ export const SurferLoginView = () => {
           {error && <p style={{ color: 'red' }}>{error}</p>}
 
           <button type="submit" className="profile-button">Submit</button>
+
+          <Link to='/SurferProfileAccount' className='form_direction'>Si no posees una cuenta haz clic acá</Link>
         </form>
 
-        <Link to='/userProfile' className='form_direction'>Si no posees una cuenta haz clic acá</Link>
+        
       </section>
 
       <SurferFooter />
