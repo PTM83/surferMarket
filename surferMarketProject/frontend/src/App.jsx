@@ -25,7 +25,7 @@ function App() {
         <Route path='/noticias' element={<Noticias />} />
         <Route path='/cart' element={<CartView />} />
         <Route path='/login' element={<SurferLoginView />} />
-        <Route path="/UserProfile" element={<userProfile />} />
+        <Route path="/UserProfile" element={<UserProfile />} />
       </Routes>
     </CartProvider>
   );
