@@ -9,14 +9,15 @@ import CartView from './pages/CartView';
 import { CartProvider } from './components/cartContext';
 import { SurferLoginView } from './pages/SurferLoginView';
 import { ProductForm } from './components/ProductForm';
-import UserProfile from './pages/userProfile';  // Capitalize for consistency
+import UserProfile from './pages/UserProfile';  // Importa el nuevo componente
+// otros imports...
 
 function App() {
   return (
     <CartProvider>
       <Routes>
         <Route path='/' element={<SurferHomePage />} />
-        <Route path='/userProfile' element={<UserProfile />} /> {/* Ensure this is the intended component */}
+        <Route path='/userProfile' element={<SurferProfileAccount />} />
         <Route path='/testView' element={<TestView />} />
         <Route path='/MarketPlace' element={<MarketPlace />} />
         <Route path='/add-product' element={<TestView />} />
@@ -24,6 +25,7 @@ function App() {
         <Route path='/noticias' element={<Noticias />} />
         <Route path='/cart' element={<CartView />} />
         <Route path='/login' element={<SurferLoginView />} />
+        <Route path="/userProfile" element={<UserProfile />} />
       </Routes>
     </CartProvider>
   );
