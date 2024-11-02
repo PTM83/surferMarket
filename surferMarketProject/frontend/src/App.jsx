@@ -9,6 +9,8 @@ import CartView from './pages/CartView';
 import { CartProvider } from './components/cartContext';
 import { SurferLoginView } from './pages/SurferLoginView';
 import { ProductForm } from './components/ProductForm';
+import UserProfile from './pages/UserProfile';  // Importa el nuevo componente
+// otros imports...
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path='/noticias' element={<Noticias />} />
         <Route path='/cart' element={<CartView />} />
         <Route path='/login' element={<SurferLoginView />} />
+        <Route path="/userProfile" element={<UserProfile />} />
       </Routes>
     </CartProvider>
   );

@@ -116,4 +116,33 @@ router.post('/login', async (req, res) => {
 //   res.json({ message: `Bienvenido ${req.user.username}, tienes acceso a esta ruta protegida` });
 // });
 
+
+// backend/routes/authRoutes.js
+
+const express = require('express');
+
+
+// Ruta para obtener los datos del perfil de usuario
+router.get('/profile', (req, res) => {
+  // Aquí puedes obtener los datos del usuario autenticado, por ejemplo, desde una base de datos
+  const userProfile = {
+    name: 'Nombre del Usuario',
+    publishedBoards: [
+      { id: 1, name: 'Tabla Pro', category: 'Shortboard', price: 400 },
+      { id: 2, name: 'Tabla de Olas', category: 'Longboard', price: 500 },
+    ],
+    soldBoards: [
+      { id: 3, name: 'Tabla Wave', category: 'Funboard', buyer: 'Comprador 1' },
+    ],
+    purchasedBoards: [
+      { id: 4, name: 'Tabla Speed', category: 'Gun', price: 300 },
+    ],
+  };
+
+  res.json(userProfile);
+});
+
+
+
+
 module.exports = router;

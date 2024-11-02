@@ -67,7 +67,7 @@ app.post('/api/products', async (req, res)=>{
 
 
 
-app.use('/api/auth', authRoutes)
+app.use('/api/auth', authRoutes);
 
 
 
