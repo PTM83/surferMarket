@@ -122,26 +122,29 @@ router.post('/login', async (req, res) => {
 const express = require('express');
 
 
-// Ruta para obtener los datos del perfil de usuario
-router.get('/profile', (req, res) => {
-  // Aquí puedes obtener los datos del usuario autenticado, por ejemplo, desde una base de datos
-  const userProfile = {
-    name: 'Nombre del Usuario',
-    publishedBoards: [
-      { id: 1, name: 'Tabla Pro', category: 'Shortboard', price: 400 },
-      { id: 2, name: 'Tabla de Olas', category: 'Longboard', price: 500 },
-    ],
-    soldBoards: [
-      { id: 3, name: 'Tabla Wave', category: 'Funboard', buyer: 'Comprador 1' },
-    ],
-    purchasedBoards: [
-      { id: 4, name: 'Tabla Speed', category: 'Gun', price: 300 },
-    ],
-  };
+// Ruta para obtener los datos del perfil de usuario con protección de token
+router.get('/profile', authenticateToken, async (req, res) => {
+  try {
+    const userProfile = {
+      name: 'Nombre del Usuario',
+      publishedBoards: [
+        { id: 1, name: 'Tabla Pro', category: 'Shortboard', price: 400 },
+        { id: 2, name: 'Tabla de Olas', category: 'Longboard', price: 500 },
+      ],
+      soldBoards: [
+        { id: 3, name: 'Tabla Wave', category: 'Funboard', buyer: 'Comprador 1' },
+      ],
+      purchasedBoards: [
+        { id: 4, name: 'Tabla Speed', category: 'Gun', price: 300 },
+      ],
+    };
 
-  res.json(userProfile);
+    res.json(userProfile);
+  } catch (error) {
+    console.error('Error al obtener los datos del perfil:', error.message);
+    res.status(500).json({ message: 'Error al obtener datos del perfil' });
+  }
 });
-
 
 
 
