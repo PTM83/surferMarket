@@ -113,29 +113,25 @@ body {
 /*MARK: PRODUCT-CARD*/
 .surfer-product-card-container {
   width: 90%;
-  height:100%;
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 2.5rem;
-  
-  justify-content: space-between;
-  align-items: center;
-  
-  .product-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width:fit-content;
-    height:25rem;
-    padding: 1rem;
+  justify-content: center;
+}
 
-    border: 0.25rem solid var(--textColor);
-    border-radius: var(--borderRadius);
-  
-    .header-product-card {
-      font-size: medium;
-    }
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 0.25rem solid var(--textColor);
+  border-radius: var(--borderRadius);
+}
+
+.header-product-card {
+  font-size: medium;
+}
   
     .image-product-card {
       width:8rem;
@@ -144,40 +140,41 @@ body {
     }
   
     .description-product-card {
-      width:auto;
-      aspect-ratio: 2/3;
-      font-size: large;
+      margin: 0.5rem 0; /* Reducir margen superior e inferior */
       text-align: center;
-      text-wrap: wrap;
+      font-size: large;
     }
+    
   
     .footer-product-card {
-      width:fit-content;
-      height:auto;
-      background-color: white;
+      display: flex;
+      flex-direction: column; /* Coloca el botón debajo del precio */
+      align-items: center; /* Centra el precio y el botón */
+      padding-top: 0.5rem;
+      gap: 0.5rem; /* Espacio entre el precio y el botón */
+    }
+
+    .product-price {
       font-size: large;
-      padding-inline: 0.5rem;
-
-      display:flex;
-      flex-direction: column;
-
-      .footer-button {
-        margin-top: 0.5rem;
-        padding:0.5rem;
-        background-color: var(--secondaryColor);
-        border-radius: 0.5rem;
-        border: 0.1rem solid var(--secondaryColor);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        color:var(--backgroundColor);
-      }
+    }
+    
+    .footer-button {
+      padding: 0.25rem 0.5rem;
+      font-size: medium;
+      background-color: var(--secondaryColor);
+      color: var(--backgroundColor);
+      border-radius: 0.5rem;
+      border: 0.1rem solid var(--secondaryColor);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
 
       .footer-button:hover {
         background-color: #c2eb0d; /* Color al pasar el mouse */
       }
-    }
-  }
 
-}
+    
+  
 
 
 /*MARK: PROFILE-CARD*/
