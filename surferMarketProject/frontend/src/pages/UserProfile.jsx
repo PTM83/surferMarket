@@ -5,8 +5,13 @@ const UserProfile = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Llamada a la API para obtener los datos del perfil
-    fetch('/api/auth/profile')
+    const token = localStorage.getItem('token'); // Asegúrate de que el token esté almacenado
+  
+    fetch('/api/auth/profile', {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    })
       .then((res) => {
         if (!res.ok) {
           throw new Error('Error al obtener datos del perfil');
@@ -19,6 +24,7 @@ const UserProfile = () => {
         setError('Hubo un problema al cargar tu perfil.');
       });
   }, []);
+  
 
   if (error) {
     return <p>{error}</p>;
